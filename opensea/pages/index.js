@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar.js";
 import Explore from "../components/Explore.js";
 import Trending from "../components/Trending.js";
+import Collection from "../components/Collection.js";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
           <Navbar />
           <Explore />
           <Trending />
+          <Collection />
         </div>
         {/* Notable Collection */}
       </div>
