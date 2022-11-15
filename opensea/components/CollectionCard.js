@@ -30,10 +30,9 @@ const CollectionCard = (props) => {
               ""
             )}
           </div>
-          <p className="flex text-[14px] text-gray-400">
-            Floor:{" "}
-            <p className="font-semibold pl-1">{`${props.price} ${props.currency}`}</p>
-          </p>
+          <div className="flex text-[14px] text-gray-400">
+          <p>Floor:</p>
+          <p className="font-semibold pl-1">{`${props.price} ${props.currency}`}</p></div>
         </div>
       </div>
       <div>
