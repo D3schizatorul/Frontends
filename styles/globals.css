@@ -1,9 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -15,12 +18,49 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.grad {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 24%,
+    rgba(200, 231, 251, 1) 62%
+  );
+}
+
+.swiper-button-next {
+  padding: 22px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: rgb(0 0 0 / 15%) 0px 4px 10px;
+  background-color: rgb(255, 255, 255);
+  background-image: url(../assets/chevron-right-solid.svg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-button-next:hover {
+  background-color: rgb(247, 241, 241);
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev {
+  padding: 22px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: rgb(0 0 0 / 15%) 0px 4px 10px;
+  background-color: rgb(255, 255, 255);
+  background-image: url(../assets/chevron-left-solid.svg);
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-button-prev:hover {
+  background-color: rgb(247, 241, 241);
+}
+
+.swiper-button-prev::after {
+  display: none;
 }
