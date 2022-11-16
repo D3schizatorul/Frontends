@@ -48,12 +48,12 @@ function capitalize(str) {
 const Trending = () => {
   return (
     <>
-      <div className="flex justify-between items-center border-b pb-2 mx-10 mt-2">
-        <div className="flex text-[24px] lg:text-[26px] font-semibold space-x-4">
-          <button className="focus:border-b-[3px] focus:border-black">
+      <div className="flex justify-between items-center border-b pb-2 mx-6 lg:mx-12 mt-2">
+        <div className="flex text-[24px] lg:text-[26px] text-gray-600 font-semibold space-x-4">
+          <button className="focus:border-b-[3px] focus:border-black focus:text-black">
             Trending
           </button>
-          <button className="focus:border-b-[3px] focus:border-black">
+          <button className="focus:border-b-[3px] focus:border-black focus:text-black">
             Top
           </button>
         </div>
@@ -101,7 +101,7 @@ const Trending = () => {
           </div>
         </div>
       </div>
-      <div className="sm:hidden flex space-x-3 mx-10 mt-2">
+      <div className="sm:hidden flex space-x-3 mx-6 lg:mx-12 mt-3">
         <div className="flex items-center justify-between w-full border px-3 py-1 rounded-[0.7rem] font-medium ">
           <button>All chains</button>
           <MdKeyboardArrowDown className="ml-2" />
