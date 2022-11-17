@@ -13,6 +13,8 @@ import talkingDead from "../assets/talkingDead.png";
 import talkingDeadBanner from "../assets/talkingDeadBanner.png";
 import kurt from "../assets/kurt.webp";
 import kurtBanner from "../assets/kurtBanner.png";
+import broadside from "../assets/broadside.png";
+import broadsideBanner from "../assets/broadsideBanner.png";
 
 const notables = [
   {
@@ -31,6 +33,12 @@ const notables = [
     title: "Kurt the Roadie",
     image: kurt,
     banner: kurtBanner,
+    verified: "true",
+  },
+  {
+    title: "Broadside",
+    image: broadside,
+    banner: broadsideBanner,
     verified: "true",
   },
 ];
