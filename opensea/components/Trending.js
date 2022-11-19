@@ -76,7 +76,7 @@ const Trending = () => {
                 All chains
               </button>
               {blockchains.map((chain) => (
-                <button className="group flex justify-center items-center hover:shadow hover:translate-y-[-0.1rem] focus:bg-[#f2f3f5] h-[43px] w-[40px]">
+                <button className="group flex justify-center items-center hover:shadow hover:translate-y-[-0.1rem] focus:bg-[#f2f3f5] h-[43px] w-[40px]" key={chain.title}>
                   <Image src={chain.img} alt={`${chain.title}-logo`} />
                   <div className="opacity-0 w-fit bg-black text-[14px] font-medium text-white text-center rounded-lg py-2.5 absolute z-10 group-hover:opacity-100 bottom-[45px] px-3 pointer-events-none">
                     {capitalize(chain.title)}

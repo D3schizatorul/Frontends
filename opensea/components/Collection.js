@@ -119,15 +119,20 @@ const Collection = () => {
         <div>
           {collections.map((collection) =>
             collection.trendingRank <= 5 ? (
-              <CollectionCard
-                rank={collection.trendingRank}
-                image={collection.image}
-                title={collection.title}
-                price={collection.price}
-                volume={collection.volume}
-                currency={collection.currency}
-                verified={collection.verified}
-              />
+              <div
+                key={collection.title}
+                className="flex justify-between items-center mb-7"
+              >
+                <CollectionCard
+                  rank={collection.trendingRank}
+                  image={collection.image}
+                  title={collection.title}
+                  price={collection.price}
+                  volume={collection.volume}
+                  currency={collection.currency}
+                  verified={collection.verified}
+                />
+              </div>
             ) : null
           )}
         </div>
@@ -143,15 +148,20 @@ const Collection = () => {
         <div>
           {collections.map((collection) =>
             collection.trendingRank > 5 && collection.trendingRank <= 10 ? (
-              <CollectionCard
-                rank={collection.trendingRank}
-                image={collection.image}
-                title={collection.title}
-                price={collection.price}
-                volume={collection.volume}
-                currency={collection.currency}
-                verified={collection.verified}
-              />
+              <div
+                key={collection.title}
+                className="flex justify-between items-center mb-7"
+              >
+                <CollectionCard
+                  rank={collection.trendingRank}
+                  image={collection.image}
+                  title={collection.title}
+                  price={collection.price}
+                  volume={collection.volume}
+                  currency={collection.currency}
+                  verified={collection.verified}
+                />
+              </div>
             ) : null
           )}
         </div>

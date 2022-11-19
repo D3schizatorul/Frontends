@@ -5,7 +5,7 @@ import verifiedIcon from "../assets/verified.png";
 
 const CollectionCard = (props) => {
   return (
-    <div className="flex justify-between items-center mb-7">
+    <>
       <div className="flex items-center">
         <div className="w-3 font-semibold text-[20px] text-gray-400">
           {props.rank}
@@ -42,7 +42,7 @@ const CollectionCard = (props) => {
         <p className="hidden xl:block w-full ml-10 font-semibold">{`${props.price} ${props.currency}`}</p>
         <p className="font-semibold xl:w-full xl:flex xl:justify-end">{`${props.volume} ${props.currency}`}</p>
       </div>
-    </div>
+    </>
   );
 };
 

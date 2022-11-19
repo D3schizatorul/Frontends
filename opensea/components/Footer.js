@@ -12,24 +12,31 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const socials = [
   {
+    name: "Twitter",
     image: <FaTwitter />,
   },
   {
+    name: "Instagram",
     image: <FaInstagram />,
   },
   {
+    name: "Discord",
     image: <FaDiscord />,
   },
   {
+    name: "Reddit",
     image: <FaRedditAlien />,
   },
   {
+    name: "Youtube",
     image: <FaYoutube />,
   },
   {
+    name: "Tiktok",
     image: <FaTiktok />,
   },
   {
+    name: "Email",
     image: <AiOutlineMail />,
   },
 ];
@@ -49,7 +56,10 @@ const Footer = () => {
             placeholder="Your email address"
             className="w-full rounded-[0.7rem] pl-4 py-[0.7rem]"
           ></input>
-          <button className="w-[12rem] rounded-[0.7rem] bg-[#2081e2] font-medium">
+          <button
+            className="w-[12rem] rounded-[0.7rem] bg-[#2081e2] font-medium"
+            onClick={console.log("qwwq")}
+          >
             Sign Up
           </button>
         </div>
@@ -58,7 +68,10 @@ const Footer = () => {
         <p className="font-bold text-[18px] mb-4 mt-8">Join the community</p>
         <div className="flex flex-wrap justify-center gap-4">
           {socials.map((social) => (
-            <button className="flex justify-center items-center w-[52px] aspect-square text-[25px] rounded-[0.7rem] bg-[#2081e2] hover:bg-[#3C92E9]">
+            <button
+              className="flex justify-center items-center w-[52px] aspect-square text-[25px] rounded-[0.7rem] bg-[#2081e2] hover:bg-[#3C92E9]"
+              key={social.name}
+            >
               {social.image}
             </button>
           ))}
