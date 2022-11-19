@@ -43,9 +43,9 @@ const nfts = [
 
 const Explore = () => {
   return (
-    <div className="flex flex-col justify-center items-stretch mx-6 lg:mx-12 mt-5">
+    <div className="flex flex-col justify-center items-stretch mx-6 lg:mx-12 pt-[100px]">
       <div>
-        <p className="font-bold text-[32px] text-center">
+        <p className="font-bold text-[32px] lg:text-[36px] text-center">
           Explore, collect, and sell NFTs
         </p>
       </div>

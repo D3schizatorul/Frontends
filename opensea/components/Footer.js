@@ -58,7 +58,6 @@ const Footer = () => {
           ></input>
           <button
             className="w-[12rem] rounded-[0.7rem] bg-[#2081e2] font-medium"
-            onClick={console.log("qwwq")}
           >
             Sign Up
           </button>

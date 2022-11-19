@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineSearch } from "react-icons/ai";
 import {
   MdOutlineShoppingCart,
   MdOutlineAccountBalanceWallet,
+  MdClose,
 } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
@@ -12,13 +13,41 @@ import { CgProfile } from "react-icons/cg";
 import openseaLogo from "../assets/opensea.svg";
 import openseaLogoText from "../assets/textLogo.png";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [isSearching, setIsSearching] = useState(true);
+
   const handleSearch = () => {
     setIsSearching((prevValue) => !prevValue);
   };
+
+  const handleCart = () => {
+    props.setCartModal((prevValue) => !prevValue);
+  };
+
+  const handleHamburger = () => {
+    props.setHamburgerMenu((prevValue) => !prevValue);
+  };
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="flex justify-between p-4 xl:px-14 items-center">
+    <div
+      className={`fixed top-0 flex justify-between p-4 xl:px-14 items-center z-50 w-full ${
+        scrollPosition == 0 ? "" : "bg-white/90 border-b"
+      } ${!props.hamburgerMenu ? "" : "duration-1000 bg-white/90 border-b"}`}
+    >
       {/* Left */}
       <Link href="/" className="flex items-center shrink-0 mr-7 lg:mr-12">
         <div>
@@ -79,10 +108,20 @@ const Navbar = () => {
             <MdOutlineAccountBalanceWallet className="w-[2rem] h-[2rem]" />
           </button>
           <button>
-            <MdOutlineShoppingCart className="w-[2.2rem] h-[2.2rem]" />
+            <MdOutlineShoppingCart
+              className="w-[2.2rem] h-[2.2rem]"
+              onClick={handleCart}
+            />
           </button>
           <button className="xl:hidden lg:ml-8">
-            <FiMenu className="w-[2rem] h-[2rem] " />
+            {props.hamburgerMenu ? (
+              <MdClose
+                className="w-[2rem] h-[2rem]"
+                onClick={handleHamburger}
+              />
+            ) : (
+              <FiMenu className="w-[2rem] h-[2rem]" onClick={handleHamburger} />
+            )}
           </button>
         </div>
       </div>

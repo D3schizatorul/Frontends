@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar.js";
@@ -8,9 +8,11 @@ import Collection from "../components/Collection.js";
 import Notables from "../components/Notables.js";
 import Footer from "../components/Footer.js";
 import WhatSection from "../components/WhatSection.js";
-import WhatCard from "../components/WhatCard.js";
+import Sidebar from "../components/Sidebar.js";
 
 export default function Home() {
+  const [cartModal, setCartModal] = useState(false);
+  const [hamburgerMenu, setHamburgerMenu] = useState(false);
   return (
     <div>
       <Head>
@@ -20,13 +22,20 @@ export default function Home() {
       </Head>
       <div>
         <div className="grad h-[50vh]">
-          <Navbar />
-          <Explore />
-          <Trending />
-          <Collection />
-          <Notables />
-          <WhatSection />
-          <Footer />
+          <Navbar
+            setCartModal={setCartModal}
+            setHamburgerMenu={setHamburgerMenu}
+            hamburgerMenu={hamburgerMenu}
+          />
+          {hamburgerMenu && <Sidebar setHamburgerMenu={setHamburgerMenu} />}
+          <div className={`duration-300 ${!hamburgerMenu ? "" : "opacity-40"}`}>
+            <Explore />
+            <Trending />
+            <Collection />
+            <Notables />
+            <WhatSection />
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
