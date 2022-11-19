@@ -45,13 +45,13 @@ const notables = [
 
 const Notables = () => {
   return (
-    <div className="flex flex-col justify-center mx-6 lg:mx-12 pt-5">
+    <div className="flex flex-col justify-center mx-6 lg:mx-12 pt-5 mb-4">
       <div>
         <p className="font-semibold text-[22px] lg:text-[26px]">
           Notable collections
         </p>
       </div>
-      <div className="mt-8">
+      <div className="mt-6">
         <Swiper
           className="h-full w-full"
           autoplay={{

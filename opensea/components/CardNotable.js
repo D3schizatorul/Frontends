@@ -8,6 +8,7 @@ const CardNotable = (props) => {
     <div className="mb-10">
       <Image
         src={props.banner}
+        alt={props.title}
         className="object-cover w-full aspect-video rounded-t-[1rem]"
       />
 
@@ -15,6 +16,7 @@ const CardNotable = (props) => {
         <div>
           <Image
             src={props.image}
+            alt={props.title}
             className="absolute bottom-24 ml-8 w-[56px] aspect-square lg:ml-5 lg:w-[70px] lg:bottom-14 rounded-[0.8rem] border-[4px] border-white"
           />
         </div>

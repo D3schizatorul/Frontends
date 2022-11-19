@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineSearch } from "react-icons/ai";
 import {
@@ -13,13 +14,13 @@ import openseaLogoText from "../assets/textLogo.png";
 
 const Navbar = () => {
   const [isSearching, setIsSearching] = useState(true);
-  const handleSearch = (e) => {
+  const handleSearch = () => {
     setIsSearching((prevValue) => !prevValue);
   };
   return (
     <div className="flex justify-between p-4 xl:px-14 items-center">
       {/* Left */}
-      <div className="flex items-center shrink-0 mr-7 lg:mr-12">
+      <Link href="/" className="flex items-center shrink-0 mr-7 lg:mr-12">
         <div>
           <Image
             src={openseaLogo}
@@ -34,7 +35,7 @@ const Navbar = () => {
             alt="logo-text"
           />
         </div>
-      </div>
+      </Link>
       {/* Middle */}
       <div className="hidden sm:flex relative items-center w-full">
         <input
@@ -68,11 +69,21 @@ const Navbar = () => {
           <button className="font-semibold">Create</button>
         </div>
         <div className="flex ml-2 lg:ml-5 xl:ml-0 space-x-[1.25rem] lg:space-x-[1.75rem]">
-          <AiOutlineSearch className="w-[2.2rem] h-[2.2rem] sm:hidden" />
-          <CgProfile className="w-[2rem] h-[2rem] hidden lg:flex" />
-          <MdOutlineAccountBalanceWallet className="w-[2rem] h-[2rem] hidden lg:flex" />
-          <MdOutlineShoppingCart className="w-[2.2rem] h-[2.2rem]" />
-          <FiMenu className="w-[2rem] h-[2rem] lg:ml-8 xl:hidden" />
+          <button className="sm:hidden">
+            <AiOutlineSearch className="w-[2.2rem] h-[2.2rem]" />
+          </button>
+          <button className="hidden lg:flex">
+            <CgProfile className="w-[2rem] h-[2rem]" />
+          </button>
+          <button className="hidden lg:flex">
+            <MdOutlineAccountBalanceWallet className="w-[2rem] h-[2rem]" />
+          </button>
+          <button>
+            <MdOutlineShoppingCart className="w-[2.2rem] h-[2.2rem]" />
+          </button>
+          <button className="xl:hidden lg:ml-8">
+            <FiMenu className="w-[2rem] h-[2rem] " />
+          </button>
         </div>
       </div>
     </div>
