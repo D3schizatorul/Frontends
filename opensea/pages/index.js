@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar.js";
@@ -27,8 +28,17 @@ export default function Home() {
             setHamburgerMenu={setHamburgerMenu}
             hamburgerMenu={hamburgerMenu}
           />
-          {hamburgerMenu && <Sidebar setHamburgerMenu={setHamburgerMenu} />}
-          <div className={`duration-300 ${!hamburgerMenu ? "" : "opacity-40"}`}>
+          <CSSTransition
+            in={hamburgerMenu}
+            appear={true}
+            timeout={500}
+            classNames="menu-primary"
+            exit={true}
+            unmountOnExit
+          >
+            <Sidebar setHamburgerMenu={setHamburgerMenu} />
+          </CSSTransition>
+          <div className={`${!hamburgerMenu ? "" : "opacity-40"}`}>
             <Explore />
             <Trending />
             <Collection />

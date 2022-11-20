@@ -64,3 +64,64 @@ a {
 .swiper-button-prev::after {
   display: none;
 }
+
+::-webkit-scrollbar {
+  z-index: 50;
+  width: 6px;
+  height: 4px;
+  background-color: #adadad;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+  background-color: #f5f5f8;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.44, rgb(122, 153, 217)),
+    color-stop(0.72, rgb(73, 125, 189)),
+    color-stop(0.86, rgb(28, 58, 148))
+  );
+}
+
+.menu-primary-enter {
+  opacity: 0;
+  animation: 0.6s slide-left;
+}
+
+.menu-primary-enter-active {
+  opacity: 1;
+  transition: opacity 600ms, transform 600ms;
+}
+
+@keyframes slide-left {
+  from {
+    right: -380px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+.menu-primary-exit {
+  animation: 0.6s slide-right;
+}
+
+.menu-primary-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+@keyframes slide-right {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -380px;
+  }
+}
