@@ -30,15 +30,14 @@ export default function Home() {
           />
           <CSSTransition
             in={hamburgerMenu}
-            appear={true}
-            timeout={500}
+            timeout={600}
             classNames="menu-primary"
             exit={true}
             unmountOnExit
           >
             <Sidebar setHamburgerMenu={setHamburgerMenu} />
           </CSSTransition>
-          <div className={`${!hamburgerMenu ? "" : "opacity-40"}`}>
+          <div className={`${hamburgerMenu ? "opacity-40" : ""}`}>
             <Explore />
             <Trending />
             <Collection />
