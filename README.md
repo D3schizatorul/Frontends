@@ -2,10 +2,10 @@
 
 Recreating popular landing pages
 
-# Opensea
+## Opensea
 
-### Live Demo: https://frontends-opensea.vercel.app
+Live Demo: https://frontends-opensea.vercel.app
 
-# Whatsapp
+## Whatsapp
 
-### Live Demo: https://frontends-whatsapp.vercel.app
+Live Demo: https://frontends-whatsapp.vercel.app
