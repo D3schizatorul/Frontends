@@ -68,9 +68,9 @@ const profiles = [
   },
 ];
 
-const Contacts = ({ setActiveChat, activeChat }) => {
+const Contacts = ({ setActiveChat, activeChat, setShowEmoji }) => {
   return (
-    <div className="overflow-scroll overflow-x-hidden h-[calc(100vh-122px)]">
+    <div className="overflow-scroll overflow-x-hidden h-[calc(100vh-122px)] min-h-[422px]">
       {profiles.map((contact) => (
         <Contact
           img={contact.img}
@@ -81,6 +81,7 @@ const Contacts = ({ setActiveChat, activeChat }) => {
           key={contact.id}
           activeChat={activeChat}
           setActiveChat={setActiveChat}
+          setShowEmoji={setShowEmoji}
         />
       ))}
     </div>

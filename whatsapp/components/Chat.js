@@ -77,10 +77,10 @@ const Chat = (props) => {
   const contact = profiles.find((elem) => elem.id == props.activeChat);
 
   return props.activeChat ? (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden overflow-y-auto">
       <ChatHeader name={contact.name} img={contact.img} />
-      <ChatBody />
-      <ChatFooter />
+      <ChatBody bottomRef={props.bottomRef}/>
+      <ChatFooter setShowEmoji={props.setShowEmoji} showEmoji={props.showEmoji}/>
     </div>
   ) : (
     <div className="flex flex-col items-center justify-center gap-5 w-full bg-[#f0f2f5]">

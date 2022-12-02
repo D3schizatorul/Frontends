@@ -11,6 +11,7 @@ const Contact = (props) => {
 
   const handleContact = () => {
     props.setActiveChat(props.id);
+    props.setShowEmoji(false);
   };
 
   return (

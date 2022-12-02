@@ -86,12 +86,45 @@ a {
 }
 
 .animate-attach-enter {
-  animation: animatezoom 0.4s;
+  opacity: 0;
+  animation: animatezoom 0.5s;
   transform-origin: bottom;
+}
+
+.animate-attach-enter-active {
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
 }
 
 .animate-attach-exit {
   transform-origin: bottom;
-  transition: transform 0.4s;
+  transition: transform 0.5s;
   transform: scale(0);
+}
+
+.animate-attach-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.animate-emoji-enter {
+  opacity: 0;
+  animation: animatezoom 0.5s;
+  transform-origin: bottom left;
+}
+
+.animate-emoji-enter-active {
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.animate-emoji-exit {
+  transform-origin: bottom left;
+  transition: transform 0.5s;
+  transform: scale(0);
+}
+
+.animate-emoji-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
 }
